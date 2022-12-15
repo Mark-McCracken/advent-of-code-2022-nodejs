@@ -15,8 +15,8 @@ jobs:
       with:
         node-version: 18.12.1
     - run: npm ci
-    - run: npm test
-    - run: npm test:e2e
+    - run: npm run test
+    - run: npm run test:e2e
     - uses: google-github-actions/auth@v1
       with:
         workload_identity_provider: projects/985036821168/locations/global/workloadIdentityPools/github-auth/providers/github-auth
