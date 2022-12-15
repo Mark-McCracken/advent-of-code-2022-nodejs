@@ -41,8 +41,8 @@ export class Day1Service {
       },
       answer: {
         part1: biggestElf.totalCalories,
-        part2: top3Elves.reduce((prev, curr) => prev + curr.totalCalories, 0)
-      }
+        part2: top3Elves.reduce((prev, curr) => prev + curr.totalCalories, 0),
+      },
     };
   }
 }

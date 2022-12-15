@@ -29,7 +29,8 @@ describe('AppController (e2e)', () => {
       .attach('file', 'src/app/day1/sample.txt')
       .expect(201)
       .expect((res) => {
-        expect(res.body.answer).toBe(24000);
+        expect(res.body.answer.part1).toBe(24000);
+        expect(res.body.answer.part2).toBe(45000);
       });
   });
 });

@@ -55,8 +55,8 @@ describe('Day1Service', () => {
       },
       answer: {
         part1: 9000,
-        part2: 23000
-      }
+        part2: 23000,
+      },
     });
   });
 
@@ -66,12 +66,12 @@ describe('Day1Service', () => {
       new Elf([9000]),
       new Elf([2000, 4000, 1000, 1000]),
       new Elf([6000, 6000]),
-      new Elf([10000])
+      new Elf([10000]),
     ];
     expect(service.findTop3Elves(elves)).toEqual([
       new Elf([6000, 6000]),
       new Elf([10000]),
-      new Elf([9000])
+      new Elf([9000]),
     ]);
   });
 });
