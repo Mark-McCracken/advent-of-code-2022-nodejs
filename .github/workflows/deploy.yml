@@ -4,10 +4,10 @@ on:
     branches:
     - main
 
-permissions: write-all
+permissions:
+  id-token: write
+  contents: read
 
-env:
-  PROJECT_ID: advent-of-code-2022-nodejs
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,3 +25,5 @@ jobs:
         workload_identity_provider: "projects/985036821168/locations/global/workloadIdentityPools/github-auth/providers/github"
         service_account: "github-actions-deployer@advent-of-code-2022-nodejs.iam.gserviceaccount.com"
     - uses: google-github-actions/deploy-appengine@v1
+      with:
+        project_id: advent-of-code-2022-nodejs
