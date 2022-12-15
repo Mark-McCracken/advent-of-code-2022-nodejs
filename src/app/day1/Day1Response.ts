@@ -1,6 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Elf } from './Elf';
 
+export class Answer {
+  @ApiProperty()
+  part1: number;
+
+  @ApiProperty()
+  part2: number;
+}
+
 export class Day1Response {
   @ApiProperty()
   totalItemsHeld: number;
@@ -12,5 +20,5 @@ export class Day1Response {
   biggestElf: Elf;
 
   @ApiProperty()
-  answer: number;
+  answer: Answer;
 }

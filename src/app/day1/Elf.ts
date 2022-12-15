@@ -24,3 +24,5 @@ export class Elf {
     return this.items.reduce((prev, curr) => prev + curr, 0);
   }
 }
+
+export type Elves = Elf[];

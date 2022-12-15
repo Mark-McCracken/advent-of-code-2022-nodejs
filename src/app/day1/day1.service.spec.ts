@@ -45,7 +45,7 @@ describe('Day1Service', () => {
       new Elf([2000, 4000, 1000, 1000]),
     ];
     const biggestElf = elves[1];
-    const output = service.formatOutput(elves, biggestElf);
+    const output = service.formatOutput(elves, biggestElf, elves);
     expect(output).toEqual({
       totalItemsHeld: 8,
       totalElves: 3,
@@ -53,7 +53,25 @@ describe('Day1Service', () => {
         items: [9000],
         totalCalories: 9000,
       },
-      answer: 9000,
+      answer: {
+        part1: 9000,
+        part2: 23000
+      }
     });
+  });
+
+  it('should find the top 3 elves', async () => {
+    const elves: Elf[] = [
+      new Elf([1000, 2000, 3000]),
+      new Elf([9000]),
+      new Elf([2000, 4000, 1000, 1000]),
+      new Elf([6000, 6000]),
+      new Elf([10000])
+    ];
+    expect(service.findTop3Elves(elves)).toEqual([
+      new Elf([6000, 6000]),
+      new Elf([10000]),
+      new Elf([9000])
+    ]);
   });
 });
