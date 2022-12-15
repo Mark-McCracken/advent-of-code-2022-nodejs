@@ -21,4 +21,15 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('ok');
   });
+
+  it(`/day1/solve (POST)`, () => {
+    return request(app.getHttpServer())
+      .post('/day1/solve')
+      .set('Content-Type', 'multipart/form-data')
+      .attach('file', 'src/app/day1/sample.txt')
+      .expect(201)
+      .expect((res) => {
+        expect(res.body.answer).toBe(24000);
+      });
+  });
 });

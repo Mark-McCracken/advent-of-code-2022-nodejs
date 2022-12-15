@@ -8,6 +8,8 @@ if (process.env.NODE_ENV === 'production') {
   startProfiler();
 } else {
   tracer = {
+    // function signature should match the one in @google-cloud/trace-agent
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     createChildSpan: function (object: { name: string }) {
       return undefined; // do nothing.
     },
@@ -18,6 +20,8 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as morgan from 'morgan';
 import { AppModule } from './app/app.module';
+// needs to be imported, but not used.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { logger } from './logger';
 
 export async function startServer(
