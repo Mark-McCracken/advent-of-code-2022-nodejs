@@ -1,5 +1,5 @@
 import * as bunyan from 'bunyan';
-import {LoggingBunyan} from '@google-cloud/logging-bunyan';
+import { LoggingBunyan } from '@google-cloud/logging-bunyan';
 const loggingBunyan = new LoggingBunyan({
   logName: 'advent-of-code-2022-nodejs',
 });

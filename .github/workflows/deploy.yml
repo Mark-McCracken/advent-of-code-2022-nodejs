@@ -4,6 +4,8 @@ on:
     branches:
     - main
 
+permissions: write-all
+
 env:
   PROJECT_ID: advent-of-code-2022-nodejs
 jobs:
@@ -13,7 +15,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: 18.12.1
+				node-version: 18.12.1
+				cache: npm
     - run: npm ci
     - run: npm run test
     - run: npm run test:e2e
