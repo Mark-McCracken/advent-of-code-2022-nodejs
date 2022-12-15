@@ -1,25 +1,25 @@
 name: deploy
 on:
-	push:
-		branches:
-		- main
+  push:
+    branches:
+    - main
 
 env:
-	PROJECT_ID: advent-of-code-2022-nodejs
+  PROJECT_ID: advent-of-code-2022-nodejs
 jobs:
   deploy:
-		runs-on: ubuntu-latest
-		steps:
-		- uses: actions/checkout@v3
-		- uses: actions/setup-node@v3
-			with:
-				node-version: 18.12.1
-		- run: npm ci
-		- run: npm test
-		- run: npm test:e2e
-		- uses: google-github-actions/auth@v1
-			with:
-				workload_identity_provider: projects/985036821168/locations/global/workloadIdentityPools/github-auth/providers/github-auth
-				service_account: 985036821168@cloudbuild.gserviceaccount.com
-		- uses: google-github-actions/deploy-appengine@v1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.12.1
+    - run: npm ci
+    - run: npm test
+    - run: npm test:e2e
+    - uses: google-github-actions/auth@v1
+      with:
+        workload_identity_provider: projects/985036821168/locations/global/workloadIdentityPools/github-auth/providers/github-auth
+        service_account: 985036821168@cloudbuild.gserviceaccount.com
+    - uses: google-github-actions/deploy-appengine@v1
 
