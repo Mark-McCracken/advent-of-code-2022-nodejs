@@ -33,4 +33,15 @@ describe('AppController (e2e)', () => {
         expect(res.body.answer.part2).toBe(45000);
       });
   });
+
+  it(`/day2/solve (POST)`, () => {
+    return request(app.getHttpServer())
+      .post('/day2/solve')
+      .set('Content-Type', 'multipart/form-data')
+      .attach('file', 'src/app/day2/sample.txt')
+      .expect(201)
+      .expect((res) => {
+        expect(res.body.answer.part1).toBe(15);
+      });
+  });
 });

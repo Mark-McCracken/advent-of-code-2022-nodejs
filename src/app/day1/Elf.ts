@@ -9,8 +9,11 @@ export class Elf {
     }
     this.items = input.split('\n').map((str) => Number(str));
     if (this.items.some((item) => isNaN(item))) {
-      console.log(
-        `Received bad input for an elf's holdings. Here are his items: ${this.items}. Some of these evaluated to NaN, but they should all be valid numbers.`,
+      console.error(
+        new Error(`Received bad input for an elf's holdings.
+        Here is his input: ${input}
+        here are his items: ${this.items}.
+        Some of these evaluated to NaN, but they should all be valid numbers.`),
       );
       throw new BadRequestException(`bad input for this elf!`);
     }

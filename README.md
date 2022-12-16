@@ -17,6 +17,26 @@ It should have:
 - error reporting
 - profiling
 
+## What does it have?
+
+### Debugging!
+
+![GCP Console Debugger](./readme-img/debugging.png)
+
+Without stopping or redeploying your running service, you can add a something akin to a breakpoint, called a snapshot, in this console. You can see what all the variables are, add your own expressions and see their values, see the callstack, and add simple logpoints.
+
+### Tracing!
+
+![GCP Console Tracing](./readme-img/tracing.png)
+
+You can see the traces of how the sampled requests are routed through different services, and how long they take to be served.
+
+### Profiling!(?)
+
+![GCP Console Profiler](./readme-img/profiler.png)
+
+You can profile your running application, which could help you down a path to finding memory leaks, doing memory footprint analysis, or poor garbage collection, effectively trying to find areas of inefficiency. However my very underutilised and straightforward API does not look very interesting.
+
 ## Interesting stuff I found so far
 
 ### You don't need to use GCP keys to authenticate with github actions.
